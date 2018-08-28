@@ -1,0 +1,134 @@
+ {% extends "www/index.html" %}
+
+ 	{% block sliderbody %}
+ 		<!-- Page Heading Section Start -->	
+	<!-- Page Heading Section End -->	
+	
+	<!-- Contact Page Section Start -->
+	<div class="contact-page-sec pt-100 pb-100">
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-8">
+						<div class="contact-field">
+							<h2>send your message</h2>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Full Name"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Organization Name"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="email" placeholder="Email Id"/> 
+								</div>				
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Mobile Number"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Designation"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Website"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Phone"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Fax"/> 
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<div class="checkbox-field">
+										<!-- <input type="checkbox" id="formcheck"> -->
+										<div class="tool_req_desc">
+											<label for="formcheck"><p>TELL US ABOUT YOUR REQUIREMENT</p>
+											Like type of tools needed, usage on machine and material to be machined
+											Enter details of Tools needed or on which machine tools are to be used or which material is to be machined.
+											</label>
+											<textarea class="form-control" rows="10" placeholder="write your requirements..."></textarea>
+										</div>
+									</div>	
+								</div>																				
+							<div class="single-input-fieldsbtn">
+								<input type="submit" value="send Message"/>
+							</div>							
+						</div>
+					<div class="mapouter">
+						<div class="gmap_canvas"><iframe width="623" height="271" id="gmap_canvas" src="https://maps.google.com/maps?q=UG-10%20Shivlok%20House%20No.2%2CKarampura%20Commercial%20Complex%2CKarampura%2C%20New%20Delhi%2C%20Delhi%2C110015&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de/google-maps/"></a>
+						</div>
+						<style>.mapouter{text-align:right;height:271px;width:623px;}.gmap_canvas {overflow:hidden;background:none!important;height:271px;width:623px;}
+						</style>
+					</div>				
+									
+				</div>			
+				<div class="col-md-4">	
+						<div class="search-field">
+							<form action="#">
+								<input placeholder="Search Office ...." type="text">
+								<button type="submit"><i class="fa fa-search"></i></button>								
+							</form>	
+						</div>				
+					<div class="contact-info">
+						<div class="contact-info-item">
+							<div class="contact-info-icon">
+								<i class="fa fa-map-marker"></i>
+							</div>
+							<div class="contact-info-text">
+								<h2>address</h2>
+								{%for address in contact_info%}
+									<span>{{address['address_line1']}} {{address['address_line2']}} {{address['city']}}, {{address['county']}}, {{address['gst_state']}}, {{address['pincode']}}. </span> 
+								{%endfor%}
+							</div>
+						</div>						
+					</div>					
+					<div class="contact-info">
+						<div class="contact-info-item">
+							<div class="contact-info-icon">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="contact-info-text">
+								<h2>e-mail</h2>
+								<span>{{email}}</span> 
+							</div>
+						</div>						
+					</div>								
+					<div class="contact-info">
+						<div class="contact-info-item">
+							<div class="contact-info-icon">
+								<i class="fa fa-clock-o"></i>
+							</div>
+							<div class="contact-info-text">
+								<h2>office time</h2>
+								<span>Mon - Wed  10:00 am - 5.00 pm</span>
+								<span>Thu - Sat  12.00 pm - 8.00 pm</span>
+								<span>Sun Day Office Holiday</span> 
+							</div>
+						</div>						
+					</div>
+					<div class="brochures">
+						<ul>
+							<li><a href="#">Download.Doc<span><i class="fa fa-download"></i></span></a></li>
+							<li><a href="#">Download.Pdf<span><i class="fa fa-download"></i></span></a></li>
+						</ul>
+					</div>					
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Contact Page Section End -->
+	{% endblock %}
+
+	{%block blog%}
+	{% endblock %}
+
+	{% block contactform %}
+	{% endblock %}
+
+	{% block team %}
+	{% endblock %}
+
+	{% block products %}
+	{% endblock %}
+
+	{% block about %}
+	{% endblock %}
+	

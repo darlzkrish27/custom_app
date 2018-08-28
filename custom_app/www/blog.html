@@ -1,0 +1,47 @@
+{% extends "www/index.html" %}
+
+{% block sliderbody %}
+<div class="row">
+				{% for blog_post in blog %}							
+				<div class="col-md-4 col-sm-4">	
+					<div class="media">	
+						<div class="single-post">	
+							<div class="single-post-thumb">	
+								<!-- <img src="/assets/custom_app/images/b1.jpg" alt=""/> -->	
+								<div class="single-post-thumb-overlay">
+
+								</div>
+							</div>								
+							<div class="single-post-text">
+								<h2><a href="{{blog_post['route']}}">{{blog_post['title']}}</a></h2>												
+								<!-- <h2><a href="blog-details.html">fusce adipiscing at sed aliquam pellentesque eu.</a></h2>	 -->
+								<div class="post-meta">
+									<ul>
+										<li><a href="/blog?blogger={{blog_post['blogger']}}"><i class="fa fa-user"></i>{{blog_post['blogger']}}</a></li>
+										<li><a href=""><i class="fa fa-calendar"></i>{{blog_post['creation']}}</a></li>
+										<li><a href=""><i class="fa fa-comment-o"></i>{{blog_post['comments']}}</a></li>
+									</ul>
+								</div>			
+								<p>{{blog_post['blog_intro']}}</p>
+							</div>
+						</div>				
+					</div>				
+				</div>
+				{% endfor %}
+			</div>
+{% endblock %}
+
+{%block blog%}
+	{% endblock %}
+
+	{% block contactform %}
+	{% endblock %}
+
+	{% block team %}
+	{% endblock %}
+
+	{% block products %}
+	{% endblock %}
+
+	{% block about %}
+	{% endblock %}

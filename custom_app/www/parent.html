@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<!-- Meta Tags -->	
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<!-- <meta name="description" content="Factopress - Factory & Industrial Business Responsive Template">
+	<meta name="keywords" content="chemicals, contractor, energy, engineering, factory, gas, heavy industries, industry, machinery, manufacturing, oil, plant, production, products, resources">
+	<meta name="author" content="Theme Garbage"> -->
+	<!-- Title -->
+	<title>Rohit Cutting Tools</title>		
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="/assets/custom_app/images/favicon.ico">	
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" href="/assets/custom_app/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/custom_app/images/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/custom_app/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/custom_app/images/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/custom_app/images/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/custom_app/images/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/custom_app/images/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/custom_app/images/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/custom_app/images/apple-touch-icon-180x180.png">
+	
+	<!-- Stylesheets Start -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/custom_app/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/magnific-popup.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/animate.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/main.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/style.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/meanmenu.min.css">
+	<link rel="stylesheet" href="/assets/custom_app/css/responsive.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif] -->
+</head>
+<body class="home-v1">
+	<!-- Preloader Start -->
+	<div id="preloader">
+		<div id="preloader-status"></div>
+	</div>
+	<!-- Preloader End -->
+	<!-- Header Start -->
+	{% block header %} 
+
+	{% endblock %}
+
+	{% block sliderbody %}
+	{% endblock %}
+
+	{%block blog%}
+	{% endblock %}
+
+	{% block contactform %}
+	{% endblock %}
+
+	{% block team %}
+	{% endblock %}
+
+	{% block products %}
+	{% endblock %}
+
+	{% block about %}
+	{% endblock %}
+	{% block footer %}
+	<footer class="footer">	
+		<!-- Footer Top Section Start -->
+		<div class="footer-sec">	
+			<div class="container">
+				<div class="row">				
+					<div class="col-md-3 col-sm-6">
+						<div class="footer-wedget-one">
+							<a href="#"><img src="{{logo}}" height="80" width="80"/></a>
+							<p>Send us your email here</p>
+							<form action="#">
+								<input placeholder="your email address" type="email">
+								<button type="submit"><i class="fa fa-paper-plane"></i></button>	
+							</form>							
+						</div>
+					</div>											
+					<div class="col-md- col-sm-6">
+						<div class="footer-widget-menu">
+							<h2>our latest products</h2>	
+							<ul id="myList">
+								{% for product in product_list%}
+									<li><a href="{{product['route']}}">{{product['item_name']}}</a></li>
+								{% endfor %}
+							</ul>
+							
+						</div>
+					</div>
+	
+					<div class="col-md-3 col-sm-6">
+						<div class="footer-wedget-four">
+							<h2>contact us </h2>
+								<div class="inner-box">
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-map-marker"></i></span>
+											</div>				
+											<div class="media-body">
+												{% for address in contact_info %}
+													<span>{{address['address_line1']}} {{address['address_line2']}} {{address['city']}}, {{address['county']}}, {{address['gst_state']}}, {{address['pincode']}}. </span> 
+												{% endfor %}
+											</div>											
+										</div>					
+									</div>								
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-envelope-o"></i></span>
+											</div>				
+											<div class="media-body">
+												<span class="inner-text">{{email}}</span>
+											</div>											
+										</div>					
+									</div>								
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-phone"></i></span>
+											</div>				
+											<div class="media-body">
+												<span class="inner-text">{{phone}}</span>
+											</div>											
+										</div>					
+									</div>											
+								</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Top Section End -->
+		<!-- Footer Bottom Section Start -->
+		<div class="footer-bottom-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-8">
+						<div class="copy-right">
+							<p>Copyright 2018 &copy; <span><a href="#">Rohit Industries Group (P) Ltd 2017 | All rights reserved
+							<!-- </a></span> Designed by:<span> david  &  alex</span></p> -->
+							<p>{{footer}}</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="footer-social">
+							<ul>
+								<li><a href="https://www.facebook.com/RohitCuttingTools/"><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-google"></i></a></li>
+								<li><a href=""><i class="fa fa-skype"></i></a></li>
+							</ul>						
+						</div>					
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- Footer Bottom Section End -->
+	</footer>
+	{% endblock %}
+	<!-- Scripts Js Start -->
+	{%block script%}
+	    <script src="/assets/custom_app/js/jquery-2.2.4.min.js"></script>
+		<script src="/assets/custom_app/js/bootstrap.min.js"></script>
+		<script src="/assets/custom_app/js/isotope.pkgd.min.js"></script>
+		<script src="/assets/custom_app/js/jquery.magnific-popup.min.js"></script>
+		<script src="/assets/custom_app/js/owl.carousel.min.js"></script>
+		<script src="/assets/custom_app/js/owl.animate.js"></script>
+		<script src="/assets/custom_app/js/jquery.scrollUp.min.js"></script>
+		<script src="/assets/custom_app/js/jquery.counterup.min.js"></script>
+		<script src="/assets/custom_app/js/modernizr.min.js"></script>
+		<script src="/assets/custom_app/js/waypoints.min.js"></script>
+		<script src="/assets/custom_app/js/jquery.meanmenu.min.js"></script>
+		<script src="/assets/custom_app/js/custom.js"></script>
+		<script src="/assets/custom_app/js/my_custom.js"></script>
+	{% endblock %}
+	<!-- Scripts Js End -->	
+
+
+</body>
+</html>
+
+
+	

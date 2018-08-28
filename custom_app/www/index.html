@@ -1,0 +1,470 @@
+{% extends "www/parent.html" %}
+	<!-- Header Start -->
+	{% block header %}
+
+	<header>
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-8">
+						<div class="header-left">
+							<ul>
+								<li><i class="fa fa-envelope-o"></i>{{email}}</li>
+								<li><i class="fa fa-map-marker"></i>{{country}}</li>
+							</ul>	
+						</div>
+					</div>				
+					<div class="col-md-4 col-sm-4">
+						<div class="header-right-div">
+							<span class="follow-title">Follow Us</span>
+							<div class="soical-profile">
+								<ul>
+									<li><a href="https://www.facebook.com/RohitCuttingTools/"><i class="fa fa-facebook"></i></a></li>
+									<li><a href=""><i class="fa fa-twitter"></i></a></li>
+									<li><a href=""><i class="fa fa-google"></i></a></li>
+									<li><a href=""><i class="fa fa-skype"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Start -->
+		<div class="hd-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12 col-xs-8">
+						<div class="logo">
+							<a href="/"><img src={{logo}} height="80" width="80"></a>
+						</div>
+					</div>	
+					<div class="col-md-7 col-sm-12">
+						<div class="mobile-nav-menu"></div>		
+						<div class="menu">
+							<nav id="main-menu" class="main-menu">
+								<ul>
+									{% for main in top %} {% if group in main %}
+											<li><a >{{main}}</a>
+												<ul>
+													{% for sub in top[main] %}
+														<li class="dropdown-submenu">
+															<a tabindex="-1">{{sub[0]}}</a>
+															<ul class="dropdown-menu">
+															{% if sub[0] in top %}
+																{% for child_sub in top[sub[0]] %}
+																	<li class="">
+																		<a href="{{child_sub[1]}}">{{child_sub[0]}}</a>
+																	</li>
+																{% endfor %}
+															{% endif %}
+														</ul>
+														</li>
+													{% endfor %}
+												</ul>
+											</li>
+											{% elif main not in product_group %}
+											<li><a>{{main}}</a>
+												<ul>
+													<li>
+														{% for sub in top[main]%}
+															<a href="{{sub[1]}}">{{sub[0]}}</a>
+														{% endfor %}
+													</li>	
+												</ul>
+											</li>
+											{% endif %}
+									{% endfor %} 
+								</ul>
+							</nav>
+							<!-- Menu Search Bar Start -->
+							<div class="search-bar-icon">	
+								<div class="site-search">	
+									<span data-toggle="dropdown"><i class="fa fa-search"></i></span>
+									<div class="search-forum dropdown-menu animation slideUpIn">
+										<form action="#">
+											<input placeholder="Search For Site" type="text"/>
+											<input type="submit" value="Go"/>
+										</form>							
+									</div>							
+								</div>
+							</div>
+							<!-- Menu Search Bar End -->
+						</div>					
+					</div>
+					<div class="col-md-2 col-sm-3">
+						<!-- <div class="appoitment-button">
+								<a href="/login">Login</a>
+							</div> -->
+						{% if user=="Guest" %}
+							<div class="appoitment-button">
+								<a href="/login">Login</a>
+							</div>
+						{% else %}
+						
+							<button class="admin-dropdown dropdown-toggle" type="button" data-toggle="dropdown">{{user}}
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="/me">My Account</a></li>
+							    <li><a href="/index">Logout</a></li>
+							    <li><a href="/desk">Switch To Desk</a></li>
+							  </ul>
+						<!-- </div> -->
+						
+						{%endif%}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header End -->
+	</header>
+	{% endblock %}
+	<!-- Header End -->	
+{% block sliderbody %}	
+	<!-- Slider Section Start -->
+		<div class="slider">
+		<div class="all-slide owl-item">
+		{%for img in slides%}					
+			<div class="single-slide" style="background-image:url({{img['image']}});">
+				<div class="slider-overlay"></div>
+				<div class="slider-wrapper">
+					<div class="slider-text">
+						<div class="slider-caption">
+							<h1>We are the best in the world</h1>	
+							<p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec ac nec. Nam vel eu amet</p>	
+						</div>	
+						<ul>
+							<li><a href="about.html">learn more</a></li>					
+							<li><a href="contact.html">contact us </a></li>
+						</ul>
+					</div>
+				</div>				
+			</div>
+		{%endfor%}																										
+		</div>
+	</div>
+{% endblock %}
+	<!-- Slider Section End -->	
+
+	{% block blog%}
+	<!-- Blog Section Start -->
+	<div class="blog-sec pt-100 pb-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="sec-title">
+						<h1>our latest posts</h1>
+						<div class="border-shape"></div>
+						<p>These are the latest blog posts from our company, there are lot more to come</p>
+					</div>
+				</div>
+			</div>			
+			<div class="row">
+				{% for blog_post in blog %}							
+				<div class="col-md-4 col-sm-4">	
+					<div class="media">	
+						<div class="single-post">	
+							<div class="single-post-thumb">	
+								<!-- <img src="/assets/custom_app/images/b1.jpg" alt=""/> -->	
+								<div class="single-post-thumb-overlay">
+
+								</div>
+							</div>								
+							<div class="single-post-text">
+								<h2><a href="{{blog_post['route']}}">{{blog_post['title']}}</a></h2>												
+								<!-- <h2><a href="blog-details.html">fusce adipiscing at sed aliquam pellentesque eu.</a></h2>	 -->
+								<div class="post-meta">
+									<ul>
+										<li><a href="/blog?blogger={{blog_post['blogger']}}"><i class="fa fa-user"></i>{{blog_post['blogger']}}</a></li>
+										<li><a href=""><i class="fa fa-calendar"></i>{{blog_post['creation']}}</a></li>
+										<li><a href=""><i class="fa fa-comment-o"></i>{{blog_post['comments']}}</a></li>
+									</ul>
+								</div>			
+								<p>{{blog_post['blog_intro']}}</p>
+							</div>
+						</div>				
+					</div>				
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+	<!-- Blog Section End -->
+	{% block contactform %}
+
+	<!-- Consult Form Section Start -->	
+	<div class="consult-form-sec">
+		<div class="row contact-div">
+			<div class="">
+				<div class="col-md-7 col-sm-12 col-xs-12 col-lg-7">
+					{% for contact in contact_form%}
+					<div class="consult-form">
+						<!-- <div class="volunteer-form-overlay"></div> -->
+						<h5>{{contact['title']}}</h5>
+						<h1>{{contact['introduction_text']}}</h1>
+						<div class="row">
+							<form>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Full Name"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Organization Name"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="email" placeholder="Email Id"/> 
+								</div>				
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Mobile Number"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Designation"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Website"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Phone"/> 
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" placeholder="Fax"/> 
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<div class="checkbox-field">
+										<!-- <input type="checkbox" id="formcheck"> -->
+										<div class="tool_req_desc">
+											<label for="formcheck"><p>TELL US ABOUT YOUR REQUIREMENT</p>
+											Like type of tools needed, usage on machine and material to be machined
+											Enter details of Tools needed or on which machine tools are to be used or which material is to be machined.
+											</label>
+											<textarea class="form-control" rows="10" placeholder="write your requirements..."></textarea>
+										</div>
+									</div>	
+								</div>
+								{%endfor%}
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<input type="submit" value="submit now"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 twitter-div"> 
+					<div class="twitter-inner">
+						<a class="twitter-timeline" data-width="220" data-height="800" href="https://twitter.com/erpnext?ref_src=twsrc%5Etfw">Tweets by {{user}}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	{% endblock %}	
+	<!-- Consult Form Section End -->	
+	<!-- Count Up Section Start -->	
+<!-- 	<div class="count-up-sec">
+		<div class="count-up-sec-overlay"></div>
+		<div class="container">
+			<div class="row">						
+				<div class="col-md-3 col-sm-6 col-xs-6 inner">
+					<div class="counting_sl">
+						<div class="countup-text">
+							<h2 class="counter">256</h2>
+							<h4>Expert Employees</h4>						
+						</div>
+					</div>
+				</div>					
+				<div class="col-md-3 col-sm-6 col-xs-6 inner">
+					<div class="counting_sl">
+						<div class="countup-text">
+							<h2 class="counter">516</h2>
+							<h4>our happy client</h4>						
+						</div>
+					</div>
+				</div>					
+				<div class="col-md-3 col-sm-6 col-xs-6 inner">
+					<div class="counting_sl">
+						<div class="countup-text">
+							<h2 class="counter">616</h2>
+							<h4>project done</h4>						
+						</div>
+					</div>				
+				</div>					
+				<div class="col-md-3 col-sm-6 col-xs-6 inner">
+					<div class="counting_sl">
+						<div class="countup-text">
+							<h2 class="counter">720</h2>
+							<h4>award winner</h4>						
+						</div>
+					</div>
+				</div>												
+			</div>					
+		</div>
+	</div> -->
+	<!-- Count Up Section End -->	
+
+	{% block team %}
+	
+	<!-- Team Section Start -->		
+	<div class="team-sec pt-100 pb-70">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="sec-title">
+						<h1>Our Expert Employees</h1>
+						<div class="border-shape"></div>
+						<p>Employees like you are the epitome of professionalism, A Great Employee is like a four leaf clover hard to find and lucky to have.</p>
+					</div>
+				</div>
+			</div>		
+			<div class="row">
+			{% for employee in team %}
+			<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="team-member">
+						<div class="team-thumb wow slideInUp"  data-wow-duration="1000ms" data-wow-delay="330ms">
+							<img src="{{employee['image_link']}}" />
+							<div class="team-overlay">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fa fa-google"></i></a></li>
+									<li><a href="#"><i class="fa fa-skype"></i></a></li>
+								</ul>							
+							</div>							
+						</div>
+						<h2>{{employee['full_name']}}</h2>					
+					</div>
+				</div>
+				{% endfor %}																			
+			</div>			     
+		</div>	
+	</div>	
+	{% endblock %}
+	<!-- Team Section End -->		
+	{% block products %}
+	<!-- Products Section Start -->	
+	<div class="service-sec pt-100 pb-70">
+		<div class="service-sec-overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="service-title">
+						<span>Our Products</span>
+						<h1>See Our Latest Products</h1>
+					</div>
+				</div>
+			</div>		
+			<div class="row">			
+				<div class="col-md-12">			
+					<div class="all-service-item">
+						{% for product in product_list%}
+						<div class="service-item">
+							<div class="service-img">
+								<a href="{{product['route']}}"><img src="{{product['image']}}" alt=""/></a>
+							</div>		
+							<div class="service-content">
+								<div class="media">
+									<!-- <div class="media-left">
+										<div class="service-icon">
+											<a href=""><img src="/assets/custom_app/images/icon/drawing.png" alt="" height="42" width="42"/></a>
+										</div>
+									</div> -->
+									<div class="media-body">
+										<div class="service-text">
+											<h2><a href="{{product['route']}}">{{product['item_name']}}</a></h2>
+											<p>{{product['item_group']}}</p>									
+										</div>
+									</div>
+								</div>
+							</div>																			
+						</div>
+						{% endfor %}										
+					</div>							
+				</div>
+			</div>
+		</div>		
+	</div>
+	{% endblock %}	
+	<!-- Products Section End -->	
+
+
+	<!-- About Us Section Start -->	
+	{% block about %}
+	<div class="about-us-sec pt-100 pb-100">
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-6">				
+					<div class="about-desc">
+						<span class="about-subtitle">why we are the best</span>
+						<h1>We have <span>55 years</span> experiens & We provied best solution for grow your bussines</h1>
+						<p>Lorem ipsum dolor sit amet, justo nunc orci donec sagittis metus dapibus, erat ullamcorper odio augue eleifend, consequat enim ullamcorper magnis dignissim nec phasellus, Lorem ipsum dolor sit amet, justo nunc orci donec sagittis metus dapibus, erat ullamcorper odio augue eleifend, consequat enim</p>
+						<p>Lorem ipsum dolor sit amet, justo nunc orci donec sagittis metus dapibus, erat ullamcorper odio augue eleifend, consequat enim .</p>
+						<a href="#">Read More</a>
+					</div>				
+				</div>
+				<div class="col-md-6">
+					<div class="faq-style1-sec">
+						<span class="faq-title">FAQ</span>
+						<h1 class="faq-style1-title">Freequently Asked Your Question here. We Assure you some FAQ</h1>
+						<div class="panel-group" id="accordion" role="tablist">
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="titleOne">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										   What`s the mission of Factorial ?</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="titleOne">
+									<div class="panel-content">
+										Lorem ipsum dolor sit amet, mauris maecenas vel. Massa ultrices erat sit dolore. Vestibulum nunc. Nec tellus vulputate facilisis. Congue nunc enim platea, dolor lacinia arcu, vehicula nascetur purus penatibus ac pulvinar, sit ac faucibus. Vitae eros justo duis lacus iaculis eu					
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="titleTwo">
+									<h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									  How can i get your service?</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titleTwo">
+									<div class="panel-content">
+										Lorem ipsum dolor sit amet, mauris maecenas vel. Massa ultrices erat sit dolore. Vestibulum nunc. Nec tellus vulputate facilisis. Congue nunc enim platea, dolor lacinia arcu, vehicula nascetur purus penatibus ac pulvinar, sit ac faucibus. Vitae eros justo duis lacus iaculis eu			
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="titleThree">
+									 <h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										How much exprience about Factorial?</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titleThree">
+									<div class="panel-content">
+										Lorem ipsum dolor sit amet, mauris maecenas vel. Massa ultrices erat sit dolore. Vestibulum nunc. Nec tellus vulputate facilisis. Congue nunc enim platea, dolor lacinia arcu, vehicula nascetur purus penatibus ac pulvinar, sit ac faucibus. Vitae eros justo duis lacus iaculis eu			
+									</div>
+								</div>
+							</div>							
+							<div class="panel">
+								<div class="panel-heading" role="tab" id="titleFour">
+									 <h4 class="panel-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										Lorem ipsum dolor sit amet?</a>
+									</h4>
+								</div>
+								<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titleFour">
+									<div class="panel-content">
+										Lorem ipsum dolor sit amet, mauris maecenas vel. Massa ultrices erat sit dolore. Vestibulum nunc. Nec tellus vulputate facilisis. Congue nunc enim platea, dolor lacinia arcu, vehicula nascetur purus penatibus ac pulvinar, sit ac faucibus. Vitae eros justo duis lacus iaculis eu			
+									</div>
+								</div>
+							</div>												
+						</div>					
+					</div>					
+				</div>
+			</div>	
+		</div>	
+	</div>	
+	{% endblock %}
+	<!-- About Us Section End -->
+

@@ -1,0 +1,27 @@
+{% extends "www/index.html" %}
+
+{% block sliderbody %}
+<!-- get the slides from item group -->
+	<div>
+		{% if slideshow %}<!-- slideshow -->
+		{% include "templates/includes/slideshow.html" %}
+		{% endif %}
+		{% if description %}<!-- description -->
+		<div itemprop="description">{{ description or ""}}</div>
+		{% endif %}
+	</div>
+{% endblock %}
+{%block blog%}
+{% endblock %}
+
+{% block contactform %}
+{% endblock %}
+
+{% block team %}
+{% endblock %}
+
+{% block products %}
+{% endblock %}
+
+{% block about %}
+{% endblock %}

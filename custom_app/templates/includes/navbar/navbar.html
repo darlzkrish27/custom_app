@@ -1,0 +1,85 @@
+<div class="hd-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12 col-xs-8">
+						<div class="logo">
+							<a href="/"><img src={{logo}} height="80" width="80"></a>
+						</div>
+					</div>	
+					<div class="col-md-7 col-sm-12">
+						<div class="mobile-nav-menu"></div>		
+						<div class="menu">
+							<nav id="main-menu" class="main-menu">
+								<ul>
+									{% for main in top %} {% if group in main %}
+											<li><a >{{main}}</a>
+												<ul>
+													{% for sub in top[main] %}
+														<li class="dropdown-submenu">
+															<a tabindex="-1">{{sub[0]}}</a>
+															<ul class="dropdown-menu">
+															{% if sub[0] in top %}
+																{% for child_sub in top[sub[0]] %}
+																	<li class="">
+																		<a href="{{child_sub[1]}}">{{child_sub[0]}}</a>
+																	</li>
+																{% endfor %}
+															{% endif %}
+														</ul>
+														</li>
+													{% endfor %}
+												</ul>
+											</li>
+											{% elif main not in product_group %}
+											<li><a>{{main}}</a>
+												<ul>
+													<li>
+														{% for sub in top[main]%}
+															<a href="{{sub[1]}}">{{sub[0]}}</a>
+														{% endfor %}
+													</li>	
+												</ul>
+											</li>
+											{% endif %}
+									{% endfor %} 
+								</ul>
+							</nav>
+							<!-- Menu Search Bar Start -->
+							<div class="search-bar-icon">	
+								<div class="site-search">	
+									<span data-toggle="dropdown"><i class="fa fa-search"></i></span>
+									<div class="search-forum dropdown-menu animation slideUpIn">
+										<form action="#">
+											<input placeholder="Search For Site" type="text"/>
+											<input type="submit" value="Go"/>
+										</form>							
+									</div>							
+								</div>
+							</div>
+							<!-- Menu Search Bar End -->
+						</div>					
+					</div>
+					<div class="col-md-2 col-sm-3">
+						<!-- <div class="appoitment-button">
+								<a href="/login">Login</a>
+							</div> -->
+						{% if user=="Guest" %}
+							<div class="appoitment-button">
+								<a href="/login">Login</a>
+							</div>
+						{% else %}
+						
+							<button class="admin-dropdown dropdown-toggle" type="button" data-toggle="dropdown">{{user}}
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="/me">My Account</a></li>
+							    <li><a href="/index">Logout</a></li>
+							    <li><a href="/desk">Switch To Desk</a></li>
+							  </ul>
+						<!-- </div> -->
+						
+						{%endif%}
+					</div>
+				</div>
+			</div>
+		</div>

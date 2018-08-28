@@ -1,0 +1,96 @@
+<footer class="footer">	
+		<!-- Footer Top Section Start -->
+		<div class="footer-sec">	
+			<div class="container">
+				<div class="row">				
+					<div class="col-md-3 col-sm-6">
+						<div class="footer-wedget-one">
+							<a href="#"><img src="{{logo}}" height="80" width="80"/></a>
+							<p>Send us your email here</p>
+							<form action="#">
+								<input placeholder="your email address" type="email">
+								<button type="submit"><i class="fa fa-paper-plane"></i></button>	
+							</form>							
+						</div>
+					</div>											
+					<div class="col-md- col-sm-6">
+						<div class="footer-widget-menu">
+							<h2>our latest products</h2>	
+							<ul id="myList">
+								{% for product in product_list%}
+									<li><a href="{{product['route']}}">{{product['item_name']}}</a></li>
+								{% endfor %}
+							</ul>
+							
+						</div>
+					</div>
+	
+					<div class="col-md-3 col-sm-6">
+						<div class="footer-wedget-four">
+							<h2>contact us </h2>
+								<div class="inner-box">
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-map-marker"></i></span>
+											</div>				
+											<div class="media-body">
+												{% for address in contact_info %}
+													<span>{{address['address_line1']}} {{address['address_line2']}} {{address['city']}}, {{address['county']}}, {{address['gst_state']}}, {{address['pincode']}}. </span> 
+												{% endfor %}
+											</div>											
+										</div>					
+									</div>								
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-envelope-o"></i></span>
+											</div>				
+											<div class="media-body">
+												<span class="inner-text">{{email}}</span>
+											</div>											
+										</div>					
+									</div>								
+									<div class="media">
+										<div class="inner-item">
+											<div class="media-left">
+												<span class="icon"><i class="fa fa-phone"></i></span>
+											</div>				
+											<div class="media-body">
+												<span class="inner-text">{{phone}}</span>
+											</div>											
+										</div>					
+									</div>											
+								</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Top Section End -->
+		<!-- Footer Bottom Section Start -->
+		<div class="footer-bottom-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-8">
+						<div class="copy-right">
+							<p>Copyright 2018 &copy; <span><a href="#">Rohit Industries Group (P) Ltd 2017 | All rights reserved
+							<!-- </a></span> Designed by:<span> david  &  alex</span></p> -->
+							<p>{{footer}}</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="footer-social">
+							<ul>
+								<li><a href="https://www.facebook.com/RohitCuttingTools/"><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-google"></i></a></li>
+								<li><a href=""><i class="fa fa-skype"></i></a></li>
+							</ul>						
+						</div>					
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- Footer Bottom Section End -->
+	</footer>
