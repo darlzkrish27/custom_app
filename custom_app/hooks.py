@@ -32,7 +32,7 @@ web_include_css = [
 ]
 web_include_js = [
 	# "/assets/custom_app/js/custom_app.js",
-	"/assets/custom_app/js/jquery-2.2.4.min.js",
+	# "/assets/custom_app/js/jquery-2.2.4.min.js",
 	"/assets/custom_app/js/bootstrap.min.js",
 	"/assets/custom_app/js/isotope.pkgd.min.js",
 	"/assets/custom_app/js/jquery.magnific-popup.min.js",
