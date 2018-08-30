@@ -51,6 +51,10 @@ update_website_context = [
   'custom_app.www.custom_homepage.get_context'
 ]
 
+website_context = {
+"favicon": "/assets/custom_app/images/favicon.ico",
+"splash_image": "/assets/custom_app/images/favicon.ico"
+}
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}

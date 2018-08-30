@@ -13,7 +13,7 @@ with open('custom_app/__init__.py', 'rb') as f:
 		f.read().decode('utf-8')).group(1)))
 
 setup(
-	name='custom_app',
+	name='rigpl_theme',
 	version=version,
 	description='This is Customisation for frappe',
 	author='Krishna',
