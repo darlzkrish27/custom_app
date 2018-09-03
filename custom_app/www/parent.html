@@ -182,6 +182,20 @@
 		<script src="/assets/custom_app/js/jquery.meanmenu.min.js"></script>
 		<script src="/assets/custom_app/js/custom.js"></script>
 		<script src="/assets/custom_app/js/my_custom.js"></script>
+		<script>
+			var video = document.getElementById("myVideo");
+			var btn = document.getElementById("myBtn");
+
+			function myFunction() {
+			  if (video.paused) {
+			    video.play();
+			    btn.innerHTML = "Pause";
+			  } else {
+			    video.pause();
+			    btn.innerHTML = "Play";
+			  }
+			}
+		</script>
 	{% endblock %}
 	<!-- Scripts Js End -->	
 

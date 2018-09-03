@@ -117,27 +117,31 @@
 	<!-- Header End -->	
 {% block sliderbody %}	
 	<!-- Slider Section Start -->
+
 		<div class="slider">
-		<div class="all-slide owl-item">
-		{%for img in slides%}					
-			<div class="single-slide" style="background-image:url({{img['image']}});">
-				<div class="slider-overlay"></div>
-				<div class="slider-wrapper">
-					<div class="slider-text">
-						<div class="slider-caption">
-							<h1>We are the best in the world</h1>	
-							<p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec ac nec. Nam vel eu amet</p>	
-						</div>	
-						<ul>
-							<li><a href="about.html">learn more</a></li>					
-							<li><a href="contact.html">contact us </a></li>
-						</ul>
-					</div>
-				</div>				
+			<div style="width: 100%;" class="hidden-sm hidden-xs">
+				<video autoplay muted loop id="desktop-video" >
+				  <source src="/files/Helping World Manufacturing Reduce Costs Since 1963.mp4" type="video/mp4">
+				  Your browser does not support HTML5 video.
+				</video>
 			</div>
-		{%endfor%}																										
+			<div style="width: 100%; height: 600px; overflow: hidden;" class="visible-xs visible-sm">
+				<video autoplay muted loop id="" height="500">
+				  <source src="/files/Helping World Manufacturing Reduce Costs Since 1963.mp4" type="video/mp4">
+				  Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<div class="slider-text">
+				<div class="slider-caption">
+					<h1>We are the best in the world</h1>	
+					<p>Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis donec, suscipit tortor et sapien donec ac nec. Nam vel eu amet</p>	
+				</div>	
+				<ul>
+					<li><a href="about.html">learn more</a></li>					
+					<li><a href="contact.html">contact us </a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
 {% endblock %}
 	<!-- Slider Section End -->	
 
