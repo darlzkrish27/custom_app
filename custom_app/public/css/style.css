@@ -121,6 +121,14 @@ p {
     padding: 20px;
 }
 
+
+.footer-sec {
+    padding-top: 100px;
+    position: relative;
+    padding-bottom: 70px;
+    margin-top: 1px;
+}
+
 /*.content {
     position: fixed;
     bottom: 0;
@@ -162,4 +170,21 @@ p {
 	z-index: 2;
 	text-align:left;
 
+}
+.videoContainer{
+  height:100%;
+  width:100%;
+  max-width:100%;
+  position:relative;
+}
+
+.videoContainer video{
+    object-fit: fill;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    min-width:100%;
+    min-height:100%;
 }
