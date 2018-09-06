@@ -574,7 +574,7 @@ h1.faq-style1-title {
 
 @media only screen and (max-width: 492px) and (min-width: 0px){
 .slider-text h1 {
-    font-size: 23px;
+    font-size: 18px;
     line-height: 27px;
 }
 }
@@ -582,7 +582,7 @@ h1.faq-style1-title {
 @media only screen and (max-width: 767px) and (min-width: 0px){
 .slider-text {
     padding: 0 30px;
-    margin-top: 13%;
+    margin-top: 10%;
 }
 }
 
@@ -652,4 +652,28 @@ h1.faq-style1-title {
 .mean-container .mean-nav ul li li li a {
     width: 65%;
     padding: 1em 15%;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 0px){
+.slider-text p {
+    width: 91%;
+}
+}
+@media only screen and (max-width: 767px) and (min-width: 0px){
+.sec-title {
+    text-align: center;
+    margin: 20px 0px 50px 0px;
+}
+}
+@media only screen and (max-width: 767px) and (min-width: 0px){
+.footer-sec {
+    margin-top: 5px;
+    margin-bottom: -90px;
+}    
+}
+@media only screen and (max-width: 767px) and (min-width: 0px){
+.footer-wedget-one img {
+    margin-bottom: 20px;
+    margin-top: -100px;
+}    
 }
