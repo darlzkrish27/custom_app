@@ -32,12 +32,12 @@ def get_context(context):
 	context.slides = frappe.db.get_all("Website Slideshow Item", filters={'parent':'Website Home Slide Show'}, fields="*")
 	context.blog = frappe.db.get_all("Blog Post", filters={}, fields="*")[:3]
 
-	context.products = frappe.db.get_all("Item", filters={}, fields=["image", "item_name", "item_group","route","show_on_homepage","ordering"])
+	context.products = frappe.db.get_all("Item", filters={}, fields=["image", "item_name", "item_group","route","show_in_website","weightage"])
 	context.my_list =[]
 	for i in context.products:
-		if i['show_on_homepage']==1:
+		if i['show_in_website']==1:
 			context.my_list.append(i)
-	context.product_list = sorted(context.my_list, key=lambda d: d[u'ordering'], reverse=True)[:3]
+	context.product_list = sorted(context.my_list, key=lambda d: d[u'weightage'], reverse=True)[:3]
 
 	context.team  = frappe.db.get_all("About Us Team Member", filters={}, fields="*")
 

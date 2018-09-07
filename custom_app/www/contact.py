@@ -29,10 +29,10 @@ def get_context(context):
 
 	context.contact_form = frappe.db.get_all("Web Form",filters={'title':'Contact us'},fields="*")
 
-	context.products = frappe.db.get_all("Item", filters={}, fields=["image", "item_name", "item_group","route","show_on_homepage","ordering"])
+	context.products = frappe.db.get_all("Item", filters={}, fields=["image", "item_name", "item_group","route","show_in_website","weightage"])
 	context.my_list =[]
 	for i in context.products:
-		if i['show_on_homepage']==1:
+		if i['show_in_website']==1:
 			context.my_list.append(i)
-	context.product_list = sorted(context.my_list, key=lambda d: d[u'ordering'], reverse=True)[:3]
+	context.product_list = sorted(context.my_list, key=lambda d: d[u'weightage'], reverse=True)[:3]
 	context.contact_info = frappe.db.get_all("Address", filters={}, fields="*")
