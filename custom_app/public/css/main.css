@@ -3111,9 +3111,6 @@ div.service-sec .service-text{
 
 
 
-
-
-
 /* end*/
 
 /* responsive */
@@ -3128,5 +3125,12 @@ div.service-sec .service-text{
 }
 @media only screen and (min-width: 768px) {
 	/* For desktop: */
+	.main_container{
+	    width: 1170px;
+	    padding-right: 15px;
+	    padding-left: 15px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
 }
 /* end */

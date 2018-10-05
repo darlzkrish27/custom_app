@@ -106,8 +106,10 @@
 											</div>				
 											<div class="media-body">
 												{% for address in contact_info %}
-													<span>{{address['address_line1']}} {{address['address_line2']}}, {{address['city']}}, {{address['gst_state']}}, {{address['pincode']}}. </span> 
-												{% endfor %}
+                                                                                                {% if "20-A Shivaji Marg" in address['address_line1'] and address['gstin']=="07AABFA1720A1ZG" %}
+                                                                                                        <span> {{address['address_line1']}}, {{address['address_line2']}},{{address['city']}}, {{address['gst_state']}}, {{address['pincode']}} </span><br/>
+                                                                                                {% endif %}
+                                                                                        {% endfor %}
 											</div>											
 										</div>					
 									</div>								
